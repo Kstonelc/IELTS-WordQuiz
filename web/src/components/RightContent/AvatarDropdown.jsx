@@ -6,12 +6,8 @@ import { createStyles } from 'antd-style';
 import { stringify } from 'querystring';
 import React, { useCallback } from 'react';
 import { flushSync } from 'react-dom';
-import HeaderDropdown from '../HeaderDropdown';
+import HeaderDropdown from '../HeaderDropdown/index.jsx';
 
-export type GlobalHeaderRightProps = {
-  menu?: boolean;
-  children?: React.ReactNode;
-};
 
 export const AvatarName = () => {
   const { initialState } = useModel('@@initialState');
@@ -37,7 +33,7 @@ const useStyles = createStyles(({ token }) => {
   };
 });
 
-export const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu, children }) => {
+export const AvatarDropdown = ({ menu, children }) => {
   /**
    * 退出登录，并且将当前的 url 保存
    */
@@ -62,7 +58,7 @@ export const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu, childre
   const { initialState, setInitialState } = useModel('@@initialState');
 
   const onMenuClick = useCallback(
-    (event: any) => {
+    (event) => {
       const { key } = event;
       if (key === 'logout') {
         flushSync(() => {
@@ -112,7 +108,7 @@ export const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu, childre
             label: '个人设置',
           },
           {
-            type: 'divider' as const,
+            type: 'divider',
           },
         ]
       : []),

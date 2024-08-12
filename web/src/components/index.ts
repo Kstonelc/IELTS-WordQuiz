@@ -5,8 +5,8 @@
 /**
  * 布局组件
  */
-import Footer from './Footer';
-import { Question, SelectLang } from './RightContent';
-import { AvatarDropdown, AvatarName } from './RightContent/AvatarDropdown';
+import Footer from './Footer/index.jsx';
+import { Question, SelectLang } from './RightContent/index.jsx';
+import { AvatarDropdown, AvatarName } from './RightContent/AvatarDropdown.jsx';
 
 export { Footer, Question, SelectLang, AvatarDropdown, AvatarName };

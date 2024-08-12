@@ -20,7 +20,7 @@ import { Alert, message, Tabs } from 'antd';
 import { createStyles } from 'antd-style';
 import React, { useState } from 'react';
 import { flushSync } from 'react-dom';
-import Settings from '../../../../config/defaultSettings';
+import Settings from '../../../../config/defaultSettings.js';
 
 const useStyles = createStyles(({ token }) => {
   return {
