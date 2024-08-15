@@ -1,0 +1,14 @@
+{
+  "name": "Word",
+  "version": "1.0.0",
+  "description": "yrdata-admin",
+  "storeUrl": "https://yrdata-1315719510.cos.ap-shanghai.myqcloud.com",
+  "docUrl": "https://docs-1315719510.cos.ap-shanghai.myqcloud.com/rego",
+  "dateFormat": "YYYY-MM-DD",
+  "timeFormat": "HH:mm:ss",
+  "dateTimeFormat": "YYYY-MM-DD HH:mm:ss",
+  "cosBucket": "soupbun-1301440964",
+  "cosRegion": "ap-shanghai",
+  "cosSecretId": "AKID74rRs2CC6qfQ4qPmwvmTzKXdZVI1laYU",
+  "cosSecretKey": "zthP1YxPvNmVJMQNGlYQDyxBJLVdft2A"
+}

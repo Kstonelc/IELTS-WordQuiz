@@ -12,37 +12,14 @@
  */
 export default [
   {
-    path: '/dashboard',
-    name: 'dashboard',
+    path: '/word-analysis',
+    name: '雅思单词听写分析',
     icon: 'dashboard',
-    routes: [
-      {
-        path: '/dashboard',
-        redirect: '/dashboard/analysis',
-      },
-      {
-        name: 'analysis',
-        icon: 'smile',
-        path: '/dashboard/analysis',
-        component: './dashboard/analysis',
-      },
-      {
-        name: 'monitor',
-        icon: 'smile',
-        path: '/dashboard/monitor',
-        component: './dashboard/monitor',
-      },
-      {
-        name: 'workplace',
-        icon: 'smile',
-        path: '/dashboard/workplace',
-        component: './dashboard/workplace',
-      },
-    ],
+    component: './wordAnalysis',
   },
   {
     path: '/',
-    redirect: '/dashboard/analysis',
+    redirect: '/word-analysis',
   },
   {
     component: '404',
