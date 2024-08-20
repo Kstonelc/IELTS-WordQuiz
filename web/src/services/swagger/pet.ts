@@ -90,10 +90,10 @@ export async function deletePet(
 /** uploads an image POST /pet/${param0}/uploadImage */
 export async function uploadFile(
   // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
-  params: API.uploadFileParams,
-  body: { additionalMetadata?: string; file?: string },
+  params: FormData,
+  body: (function(*): void) | *,
   file?: File,
-  options?: { [key: string]: any },
+  options?: { [p: string]: any },
 ) {
   const { petId: param0, ...queryParams } = params;
   const formData = new FormData();

@@ -1,10 +1,7 @@
-import { AvatarDropdown, AvatarName, Footer, Question, SelectLang } from '@/components';
-import { LinkOutlined } from '@ant-design/icons';
+import { Footer } from '@/components';
 import { SettingDrawer } from '@ant-design/pro-components';
-import { history, Link } from '@umijs/max';
+import { history } from '@umijs/max';
 import defaultSettings from '../config/defaultSettings.js';
-import { errorConfig } from './requestErrorConfig';
-import { currentUser as queryCurrentUser } from './services/ant-design-pro/api';
 const isDev = process.env.NODE_ENV === 'development';
 const loginPath = '/user/login';
 
@@ -12,29 +9,9 @@ const loginPath = '/user/login';
  * @see  https://umijs.org/zh-CN/plugins/plugin-initial-state
  * */
 export async function getInitialState() {
-  const fetchUserInfo = async () => {
-    try {
-      const msg = await queryCurrentUser({
-        skipErrorHandler: true,
-      });
-      return msg.data;
-    } catch (error) {
-      history.push(loginPath);
-    }
-    return undefined;
-  };
   // 如果不是登录页面，执行
   const { location } = history;
-  if (![loginPath, '/user/register', '/user/register-result'].includes(location.pathname)) {
-    const currentUser = await fetchUserInfo();
-    return {
-      fetchUserInfo,
-      currentUser,
-      settings: defaultSettings,
-    };
-  }
   return {
-    fetchUserInfo,
     settings: defaultSettings,
   };
 }
@@ -42,7 +19,7 @@ export async function getInitialState() {
 // ProLayout 支持的api https://procomponents.ant.design/components/layout
 export const layout = ({ initialState, setInitialState }) => {
   return {
-    title: "贾领导的雅思一站式平台",
+    title: '贾领导的雅思一站式平台',
     // actionsRender: () => [<Question key="doc" />, <SelectLang key="SelectLang" />],
     // avatarProps: {
     //   src: initialState?.currentUser?.avatar,
@@ -58,9 +35,9 @@ export const layout = ({ initialState, setInitialState }) => {
     onPageChange: () => {
       const { location } = history;
       // 如果没有登录，重定向到 login
-      if (!initialState?.currentUser && location.pathname !== loginPath) {
-        history.push(loginPath);
-      }
+      // if (!initialState?.currentUser && location.pathname !== loginPath) {
+      //   history.push(loginPath);
+      // }
     },
     bgLayoutImgList: [
       {
@@ -113,7 +90,7 @@ export const layout = ({ initialState, setInitialState }) => {
  * 它基于 axios 和 ahooks 的 useRequest 提供了一套统一的网络请求和错误处理方案。
  * @doc https://umijs.org/docs/max/request#配置
  */
-export const request = {
-  baseURL: 'https://proapi.azurewebsites.net',
-  ...errorConfig,
-};
+// export const request = {
+//   baseURL: 'https://proapi.azurewebsites.net',
+//   ...errorConfig,
+// };
