@@ -6,7 +6,7 @@ const Settings = {
   fixedHeader: true,
   fixSiderbar: true,
   pwa: false,
-  logo: 'https://public-1315719510.cos.ap-shanghai.myqcloud.com/images/logo-6.png',
+  // logo: 'https://public-1315719510.cos.ap-shanghai.myqcloud.com/images/logo-6.png',
   headerHeight: 45,
   splitMenus: true,
   token: {

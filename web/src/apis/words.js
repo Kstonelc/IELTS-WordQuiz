@@ -3,6 +3,8 @@ export async function analysisWords(data) {
   return request('/api/words/words-analysis', {
     method: 'POST',
     data: data,
+    responseType: 'blob',
+    parseResponse: false,
   });
 }
 
